@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="loginview"
+            type="com.example.quiz.viewmodel.LoginViewModel"/>
+
+        <variable
+            name="presenter"
+            type="com.example.quiz.presenter.Presenter"/>
+
+    </data>
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/study1"
+
+    tools:context="com.quiz.MainActivity">
+
+
+
+
+    <EditText
+        android:id="@+id/username"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_margin="20dp"
+        android:layout_centerVertical="true"
+        android:hint="@string/user_name"
+        android:text="@={loginview.username}"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        android:textSize="20sp"
+        android:layout_alignParentLeft="true" />
+
+    <EditText
+        android:id="@+id/userpass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/username"
+        android:layout_alignParentStart="true"
+        android:layout_margin="20dp"
+        android:hint="@string/user_pas"
+        android:text="@={loginview.userpass}"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        android:textSize="20sp"
+        android:layout_alignParentLeft="true" />
+
+    <Button
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/userpass"
+        android:layout_centerHorizontal="true"
+        android:background="@color/red1"
+        android:onClick="@{(v)->presenter.loginData()}"
+        android:text="@string/login"
+        android:textColor="@color/white"
+        android:textSize="22sp" />
+
+
+    <ProgressBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/progess"
+        app:visibility="@{loginview.progressBar}"
+        android:layout_centerInParent="true"/>
+
+
+
+</RelativeLayout>
+</layout>

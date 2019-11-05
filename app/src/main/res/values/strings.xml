@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Quiz App</string>
+    <string name="user_name">User Name</string>
+    <string name="user_pas">User Pas</string>
+    <string name="login">Login</string>
+    <string name="min_hours_value"><![CDATA[\">%1$02d:%2$02d]]></string>
+    <string name="guesthouse_bookings">List</string>
+</resources>
