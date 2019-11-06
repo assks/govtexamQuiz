@@ -1,9 +1,7 @@
 package com.example.quiz.viewmodel;
 
 import android.content.Context;
-
 import android.view.View;
-
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -55,7 +53,7 @@ public class GueshouseViewModel extends Observable {
     private void fetchGueshouseList() {
         APIService api = RetroClass.getRetrofitInstance().create(APIService.class);
 
-        Call<List<GuesthouseBooking>> call = api.fetchBookingList("self_booking","38", /*userId,*/"38","148451");
+        Call<List<GuesthouseBooking>> call = api.fetchBookingList("self_booking", "38", /*userId,*/"38", "148451");
         call.enqueue(new Callback<List<GuesthouseBooking>>() {
             @Override
             public void onResponse(@NonNull Call<List<GuesthouseBooking>> call, @NonNull Response<List<GuesthouseBooking>> response) {
